@@ -36,6 +36,7 @@ section {
 }
 .option input {
   padding: 10px;
+  outline: gray;
 }
 .price {
   margin-top: 20px;
