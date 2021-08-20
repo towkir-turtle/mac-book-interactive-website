@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+section {
+  margin-top: 50px;
+}
+.row {
+  max-width: 1140px auto;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.half-width img {
+  width: 400px;
+  height: auto;
+  margin-left: 200px;
+}
+.description p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+.half-width .option {
+  margin-top: 20px;
+}
+.half-width input:hover {
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.option input {
+  padding: 10px;
+}
+.price {
+  margin-top: 20px;
+  width: 300px;
+}
+.price .item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.half-width .horizontal-line {
+  width: 350px;
+  color: #000;
+  margin-top: 10px;
+}
+.second-horizontal {
+  color: rgba(74, 72, 72, 0.1);
+  margin-top: 20px;
+}
+.total {
+  text-align: center;
+}
