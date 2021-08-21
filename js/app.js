@@ -44,27 +44,25 @@ function getCostInput(item){
 
 //get total cost:
 function getTotalCost(){
-    getCostInput('best');
-    getCostInput('memory');
-    getCostInput('storage');
-    getCostInput('delivery');
+    const bestCost = getCostInput('best');
+    const memoryCost = getCostInput('memory');
+    const storageCost = getCostInput('storage');
+    const deliveryCharge = getCostInput('delivery');
 
     const totalPriceInput = document.getElementById('total-price');
-    totalPriceInput.innerText = getCostInput('best') + getCostInput('memory') + getCostInput('storage') + getCostInput('delivery');
-
+    totalPriceInput.innerText = bestCost + memoryCost + storageCost + deliveryCharge;
     return totalPriceInput;
 };
 
 //get another total:
 function getAnotherTotal(){
-    getCostInput('best');
-    getCostInput('memory');
-    getCostInput('storage');
-    getCostInput('delivery');
+    const bestCost = getCostInput('best');
+    const memoryCost = getCostInput('memory');
+    const storageCost = getCostInput('storage');
+    const deliveryCharge = getCostInput('delivery');
 
-    const totalInput = document.getElementById('total');
-    totalInput.innerText = getCostInput('best') + getCostInput('memory') + getCostInput('storage') + getCostInput('delivery');
-
+    const totalPriceInput = document.getElementById('total');
+    totalPriceInput.innerText = bestCost + memoryCost + storageCost + deliveryCharge;
     return totalInput;
 };
 
