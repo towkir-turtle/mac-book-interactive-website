@@ -1,16 +1,20 @@
+/* Basic setup */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  line-height: 1.3;
 }
 body {
   font-family: "Roboto", sans-serif;
 }
+/* Main section style */
 section {
   margin-top: 50px;
 }
 .row {
-  max-width: 1140px auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .container {
   display: grid;
@@ -19,14 +23,17 @@ section {
 .half-width img {
   width: 400px;
   height: auto;
-  margin-left: 200px;
+  margin-left: 100px;
+}
+.half-width h1 {
+  font-size: 42px;
 }
 .description p {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 16px;
 }
 .half-width .option {
-  margin-top: 20px;
+  margin-top: 25px;
 }
 .half-width input:hover {
   background: #000;
@@ -36,10 +43,12 @@ section {
 }
 .option input {
   padding: 10px;
-  outline: gray;
+}
+input[type="text"]:focus {
+  outline: 1px solid #000;
 }
 .price {
-  margin-top: 20px;
+  margin-top: 30px;
   width: 300px;
 }
 .price .item {
@@ -58,4 +67,22 @@ section {
 }
 .total {
   text-align: center;
+}
+
+/* Apply button style  */
+.discount {
+  margin-top: 20px;
+}
+.discount input {
+  padding: 8px 16px;
+}
+.discount input:hover {
+  background: #fff;
+  color: #000;
+}
+#apply-btn {
+  padding: 8px 20px;
+  background: maroon;
+  color: #fff;
+  cursor: pointer;
 }

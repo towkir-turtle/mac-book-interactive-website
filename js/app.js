@@ -1,4 +1,3 @@
-//Add memory button event handler:
 function getItemInput(item, memoryPrice){
     const memoryCost = document.getElementById(item + '-cost');
     memoryCost.innerText = memoryPrice;
@@ -7,6 +6,8 @@ function getItemInput(item, memoryPrice){
 
     getTotal();
 }
+
+//Add memory button event handler:
 document.getElementById('default-memory-input').addEventListener('click', function(){    
     getItemInput('memory', 0);
 });
@@ -72,5 +73,20 @@ function getTotal(){
     return totalPriceInput;
 };
 
+//Add discount button event handler:
+document.getElementById('apply-btn').addEventListener('click', function(){
+
+    const promoCodeInput = document.getElementById('promo-code-input');
+    const promoCodeValue = promoCodeInput.value;
+
+    const totalPriceInput = document.getElementById('total');
+    const totalPrice = totalPriceInput.innerText;
+
+    if(promoCodeValue == 'stevekaku'){
+        totalPriceInput.innerText = totalPrice - (totalPrice * .2);
+    }
+
+    promoCodeInput.value = '';
+});
 
 
