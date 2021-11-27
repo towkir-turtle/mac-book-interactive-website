@@ -1,84 +1,98 @@
-function getItemInput(item, itemPrice){
-    const itemCost = document.getElementById(item + '-cost');
-    itemCost.innerText = itemPrice;
+function getItemInput(item, itemPrice) {
+  const itemCost = document.getElementById(item + "-cost");
+  itemCost.innerText = itemPrice;
 
-    //get total cost:
-    getTotalCost();
-    //get another total:
-    getAnotherTotal();
-};
+  //get total cost:
+  getTotalCost();
+
+  //get another total:
+  getAnotherTotal();
+}
 
 //Add memory button event handler:
-document.getElementById('default-memory-input').addEventListener('click', function(){    
-    getItemInput('memory', 0);
-});
-document.getElementById('extra-memory-input').addEventListener('click', function(){    
-    getItemInput('memory', 180);
-});
+document
+  .getElementById("default-memory-input")
+  .addEventListener("click", function () {
+    getItemInput("memory", 0);
+  });
+document
+  .getElementById("extra-memory-input")
+  .addEventListener("click", function () {
+    getItemInput("memory", 180);
+  });
 
 //Add storage button event handler:
-document.getElementById('default-storage-input').addEventListener('click', function(){
-    getItemInput('storage', 0);
-});
-document.getElementById('extra-storage-input').addEventListener('click', function(){
-    getItemInput('storage', 100);
-});
-document.getElementById('ultra-storage-input').addEventListener('click', function(){
-    getItemInput('storage', 180);
-});
+document
+  .getElementById("default-storage-input")
+  .addEventListener("click", function () {
+    getItemInput("storage", 0);
+  });
+document
+  .getElementById("extra-storage-input")
+  .addEventListener("click", function () {
+    getItemInput("storage", 100);
+  });
+document
+  .getElementById("ultra-storage-input")
+  .addEventListener("click", function () {
+    getItemInput("storage", 180);
+  });
 
 //Add delivery button event handler:
-document.getElementById('normal-delivery-charge').addEventListener('click', function(){
-    getItemInput('delivery', 0);
-});
-document.getElementById('fast-delivery-charge').addEventListener('click', function(){
-    getItemInput('delivery', 20);
-});
+document
+  .getElementById("normal-delivery-charge")
+  .addEventListener("click", function () {
+    getItemInput("delivery", 0);
+  });
+document
+  .getElementById("fast-delivery-charge")
+  .addEventListener("click", function () {
+    getItemInput("delivery", 20);
+  });
 
 //get cost input:
-function getCostInput(item){
-    const costInput = document.getElementById(item + '-cost');
-    const costInputValue = parseInt(costInput.innerText);
-    return costInputValue;
-};
+function getCostInput(item) {
+  const costInput = document.getElementById(item + "-cost");
+  const costInputValue = parseInt(costInput.innerText);
+  return costInputValue;
+}
 
 //get total cost:
-function getTotalCost(){
-    const bestCost = getCostInput('best');
-    const memoryCost = getCostInput('memory');
-    const storageCost = getCostInput('storage');
-    const deliveryCharge = getCostInput('delivery');
+function getTotalCost() {
+  const bestCost = getCostInput("best");
+  const memoryCost = getCostInput("memory");
+  const storageCost = getCostInput("storage");
+  const deliveryCharge = getCostInput("delivery");
 
-    const totalPriceInput = document.getElementById('total-price');
-    totalPriceInput.innerText = bestCost + memoryCost + storageCost + deliveryCharge;
-    return totalPriceInput;
-};
+  const totalPriceInput = document.getElementById("total-price");
+  totalPriceInput.innerText =
+    bestCost + memoryCost + storageCost + deliveryCharge;
+  return totalPriceInput;
+}
 
 //get another total:
-function getAnotherTotal(){
-    const bestCost = getCostInput('best');
-    const memoryCost = getCostInput('memory');
-    const storageCost = getCostInput('storage');
-    const deliveryCharge = getCostInput('delivery');
+function getAnotherTotal() {
+  const bestCost = getCostInput("best");
+  const memoryCost = getCostInput("memory");
+  const storageCost = getCostInput("storage");
+  const deliveryCharge = getCostInput("delivery");
 
-    const totalPriceInput = document.getElementById('total');
-    totalPriceInput.innerText = bestCost + memoryCost + storageCost + deliveryCharge;
-    return totalInput;
-};
+  const totalPriceInput = document.getElementById("total");
+  totalPriceInput.innerText =
+    bestCost + memoryCost + storageCost + deliveryCharge;
+  return totalInput;
+}
 
 //Add discount button event handler:
-document.getElementById('apply-btn').addEventListener('click', function(){
+document.getElementById("apply-btn").addEventListener("click", function () {
+  const promoCodeInput = document.getElementById("promo-code-input");
+  const promoCodeValue = promoCodeInput.value;
 
-    const promoCodeInput = document.getElementById('promo-code-input');
-    const promoCodeValue = promoCodeInput.value;
+  const totalPriceInput = document.getElementById("total");
+  const totalPrice = parseFloat(totalPriceInput.innerText);
 
-    const totalPriceInput = document.getElementById('total');
-    const totalPrice = parseFloat(totalPriceInput.innerText);
-
-    if(promoCodeValue == 'stevekaku'){
-        totalPriceInput.innerText = totalPrice - (totalPrice * .2);
-    };
-    promoCodeInput.value = '';
+  if (promoCodeValue == "stevekaku") {
+    totalPriceInput.innerText = totalPrice - totalPrice * 0.2;
+  }
+  promoCodeInput.value = "";
 });
-
-
